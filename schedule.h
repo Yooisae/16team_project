@@ -1,5 +1,6 @@
 #include<stdio.h>
 #include<stdlib.h>
+#include<string.h>
 
 typedef struct{
 	char s_name[20];//스케줄 이름
@@ -25,4 +26,15 @@ int select_No(Schedule p[], int count);//삭제나 수정을 하기 위해 제�
 void saveFile(Schedule p[], int count);//파일을 저장하는 함수
 
 int loadFile(Schedule p[]);//파일을 가져오는 함수 
+
+int complete(Schedule p[]);//파일 완성도를 입력하는 함수
+
+int processivity(Schedule p[],int count);//현재 진행도를 나타내는 함수
+
+int find(Scedule p[],int count);//일정을 찾는 함수
+
+void sortedbyDate(Schedule p[],int count);//날짜별로 정렬하는 함수
+
+void sortedbyImportance(Schedule p[],int count);//중요도별로 정렬하는 함수
+
 
