@@ -7,15 +7,17 @@ int select_menu(){
 	printf("1. 일정추가\n");
 	printf("2. 일정조회\n");
 	printf("메뉴를 입력해 주세요: ");
-	scnaf("%d", &menu);
+	scanf("%d", &menu);
 	return menu;
 }
 
 int main(){
-	schedule sch[SIZE];
-	int conut = 0;
+	Schedule sch[SIZE];
+	int count = 0;
 	int curcount =0;
+	int menu;
 	while(1){	
+		menu = select_menu();
 		if(menu == 1){
 			count += add_schedule(&sch[curcount]);
 			curcount++;
