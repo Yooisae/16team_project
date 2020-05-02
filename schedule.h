@@ -1,7 +1,7 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
-
+#define SIZE 50
 typedef struct{
 	char s_name[20];//스케줄 이름
 	int s_date;//시작일
