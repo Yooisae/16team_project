@@ -7,7 +7,7 @@ typedef struct{
 	int s_date;//시작일
 	int e_date;//종료일
 	int importance;//중요도
-	bool complete;//완료유무
+	int complete;//완료유무
 }Schedule;
 
 
@@ -31,7 +31,7 @@ int complete(Schedule p[]);//파일 완성도를 입력하는 함수
 
 int processivity(Schedule p[],int count);//현재 진행도를 나타내는 함수
 
-int find(Scedule p[],int count);//일정을 찾는 함수
+int find(Schedule p[],int count);//일정을 찾는 함수
 
 void sortedbyDate(Schedule p[],int count);//날짜별로 정렬하는 함수
 
