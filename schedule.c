@@ -59,7 +59,7 @@ void list_schedule(Schedule p[], int count){
 
 int select_No(Schedule *p, int count){
     int no;
-    list_schedule(p[],count);
+    list_schedule(p,count);
     printf("번호는 (취소:0)?");
     scanf("%d",&no);
     getchar();

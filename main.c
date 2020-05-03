@@ -6,6 +6,7 @@ int select_menu(){
 	printf("====================\n");
 	printf("1. 일정추가\n");
 	printf("2. 일정조회\n");
+	printf("3. 일정수정\n");
 	printf("메뉴를 입력해 주세요: ");
 	scanf("%d", &menu);
 	return menu;
@@ -29,9 +30,17 @@ int main(){
 			}
 			list_schedule(sch, curcount);
 		}
+		else if(menu == 3){
+			int no = select_No(sch,curcount);
+			if(no == 0){
+					printf("취소되었습니다\n");
+					continue;	
+			}
+			updata_schedule(&sch[no-1]);
+		}
 		else{
 			printf("=======종료=======\n");
 			break;
-		}		
-	}
+		}
+}
 }
