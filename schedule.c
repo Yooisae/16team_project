@@ -66,3 +66,22 @@ int select_No(Schedule *p, int count){
     return no;
 }
 
+int updata_schedule(Schedule *p){
+	
+	printf("일정 이름을 입력해 주세요: ");
+	getchar();
+	scanf("%[^\n]", p->s_name);
+	printf("일정 시작일을 입력해 주세요: ");
+	getchar();
+	scanf("%d", &p->s_date);
+	printf("일정 종료일을 입력해 주세요: ");
+	getchar();
+	scanf("%d", &p->e_date);
+	printf("일정의 중요한 정도를 입력해 주세요(1~5): ");
+	getchar();
+	scanf("%d", &p->importance);
+	p->complete = 0;
+	printf("=>수정되었습니다!");
+	return 1;
+}
+
