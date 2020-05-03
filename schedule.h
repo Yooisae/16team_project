@@ -21,7 +21,7 @@ int updata_schedule(Schedule *p);//스케줄을 수정하는 함수
 
 int delete_schedule(Schedule *p);//스케줄 삭제
 
-int select_No(Schedule p[], int count);//삭제나 수정을 하기 위해 제품을 선택하는 함수.(제품의 순서를 return한다.)
+int select_No(Schedule *p, int count);//삭제나 수정을 하기 위해 제품을 선택하는 함수.(제품의 순서를 return한다.)
 
 void saveFile(Schedule p[], int count);//파일을 저장하는 함수
 
