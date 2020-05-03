@@ -10,7 +10,7 @@
 int add_schedule(Schedule *p){
 	printf("일정 이름을 입력해 주세요: ");
 	getchar();
-	scanf("%[^\n]", p->s_name);
+	scanf(" %[^\n]", p->s_name);
 	printf("일정 시작일을 입력해 주세요: ");
 	getchar();
 	scanf("%d", &p->s_date);
@@ -62,7 +62,6 @@ int select_No(Schedule *p, int count){
     list_schedule(p,count);
     printf("번호는 (취소:0)?");
     scanf("%d",&no);
-    getchar();
     return no;
 }
 
@@ -70,7 +69,7 @@ int updata_schedule(Schedule *p){
 	
 	printf("일정 이름을 입력해 주세요: ");
 	getchar();
-	scanf("%[^\n]", p->s_name);
+	scanf("%[^\n]s", p->s_name);
 	printf("일정 시작일을 입력해 주세요: ");
 	getchar();
 	scanf("%d", &p->s_date);
