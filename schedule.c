@@ -37,11 +37,12 @@ void list_schedule(Schedule p[], int count){
 	printf("NO.| 일정이름		시작일		종료일		중요도	완료유무\n");
 	printf("------------------------------------------------------------------------\n");
 	for(int i = 0 ; i <count ; i++){
-		printf("%2d.| ",(i+1));
 		if(p[i].complete==-1/*||p[i].complete==1*/)
 			continue;
-		else
+		else{
+			printf("%2d.| ",(i+1));
 			read_schedule(p[i]);
+		}
 	}
 	/*printf("\n\n=============================================================================\n\n");
 	printf("===>완료된 일정<===\n");
@@ -89,3 +90,14 @@ int delete_schedule(Schedule *p){
 	printf("==>삭제됨!\n");
 	return 0;
 }
+void saveFile(Schedule p[], int count){
+	FILE *fp;
+	fp = fopen("schedule.txt", "wt");
+	for(int i = 0 ; i < count ; i++){
+		fprintf(fp,"%s %d %d %d %d", p[i].s_name, p[i].s_date, p[i].e_date, p[i].importance, p[i].complete);
+	}
+	fclose(fp);
+	printf("==>저장됨<==\n"); 
+
+}
+
