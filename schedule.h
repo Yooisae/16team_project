@@ -4,8 +4,8 @@
 #define SIZE 50
 typedef struct{
 	char s_name[20];//스케줄 이름
-	int s_date;//시작일
-	int e_date;//종료일
+	int s_date[3];//시작일
+	int e_date[3];//종료일
 	int importance;//중요도
 	int complete;//완료유무
 }Schedule;
