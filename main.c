@@ -19,6 +19,10 @@ int main(){
 	int count = 0;
 	int curcount =0;
 	int menu;
+	count = loadFile(sch);
+	curcount=count;
+
+
 	while(1){	
 		menu = select_menu();
 		if(menu == 1){
@@ -50,7 +54,7 @@ int main(){
 			printf("정말로 삭제하시겠습니까?(삭제:1)");
 			scanf("%d",&deleteok);
 			if(deleteok==1){
-				if(delete_schedule(&sch[no-1])) curcount--;
+				if(delete_schedule(&sch[no-1])) count--;
 				}
 			}
 		else if(menu == 5){
