@@ -95,7 +95,7 @@ void saveFile(Schedule p[], int count){
 	FILE *fp;
 	fp = fopen("schedule.txt", "wt");
 	for(int i = 0 ; i < count ; i++){
-		fprintf(fp,"%s %d %d %d %d\n", p[i].s_name, p[i].s_date, p[i].e_date, p[i].importance, p[i].complete);
+		fprintf(fp,"%s\n %d %d %d %d ", p[i].s_name, p[i].s_date, p[i].e_date, p[i].importance, p[i].complete);
 	}
 	fclose(fp);
 	printf("==>저장됨<==\n"); 
@@ -111,7 +111,7 @@ int loadFile(Schedule p[]){
 		return 0;
 	}
 	for(;;count++){
-		fscanf(fp, "%[^\n]s %d %d %d %d",p[count].s_name,&p[count].s_date, &p[count].e_date, &p[count].importance,&p[count].complete);
+		fscanf(fp,"%[^\n] %d %d %d %d",p[count].s_name,&p[count].s_date, &p[count].e_date, &p[count].importance,&p[count].complete);
 		if(feof(fp)) break;
 }
 	fclose(fp);

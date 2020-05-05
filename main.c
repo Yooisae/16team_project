@@ -21,8 +21,6 @@ int main(){
 	int menu;
 	count = loadFile(sch);
 	curcount=count;
-
-
 	while(1){	
 		menu = select_menu();
 		if(menu == 1){
