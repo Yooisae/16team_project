@@ -90,7 +90,18 @@ int delete_schedule(Schedule *p){
 	printf("==>삭제됨!\n");
 	return 0;
 }
-<<<<<<< HEAD
+
+void saveFile(Schedule p[], int count){
+	FILE *fp;
+	fp = fopen("schedule.txt", "wt");
+	for(int i = 0 ; i < count ; i++){
+		fprintf(fp,"%s %d %d %d %d\n", p[i].s_name, p[i].s_date, p[i].e_date, p[i].importance, p[i].complete);
+	}
+	fclose(fp);
+	printf("==>저장됨<==\n"); 
+
+}
+
 int loadFile(Schedule p[]){
 	int count=0;
 	FILE *fp;
@@ -100,23 +111,11 @@ int loadFile(Schedule p[]){
 		return 0;
 	}
 	for(;;count++){
-		fscanf(fp, "%d %d %d %[^\n]s",&p[count].s_date, &p[count].e_date, &p[count].importance,p[count].s_name);
+		fscanf(fp, "%[^\n]s %d %d %d %d",p[count].s_name,&p[count].s_date, &p[count].e_date, &p[count].importance,&p[count].complete);
 		if(feof(fp)) break;
 }
 	fclose(fp);
 	printf("=>로딩성공!\n");
 	return count;
-}  
-=======
-void saveFile(Schedule p[], int count){
-	FILE *fp;
-	fp = fopen("schedule.txt", "wt");
-	for(int i = 0 ; i < count ; i++){
-		fprintf(fp,"%s %d %d %d %d", p[i].s_name, p[i].s_date, p[i].e_date, p[i].importance, p[i].complete);
-	}
-	fclose(fp);
-	printf("==>저장됨<==\n"); 
+} 
 
-}
-
->>>>>>> 3a65a56c6bc216163aa1d2861900a7a15b417f09
