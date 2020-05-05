@@ -7,6 +7,7 @@ int select_menu(){
 	printf("1. 일정추가\n");
 	printf("2. 일정조회\n");
 	printf("3. 일정수정\n");
+	printf("4. 메뉴삭제\n");
 	printf("메뉴를 입력해 주세요: ");
 	scanf("%d", &menu);
 	return menu;
@@ -48,7 +49,7 @@ int main(){
 			printf("정말로 삭제하시겠습니까?(삭제:1)");
 			scanf("%d",&deleteok);
 			if(deleteok==1){
-				if(delete_schedule(&sch[no-1])) count--;
+				if(delete_schedule(&sch[no-1])) curcount--;
 				}
 			}
 		else{

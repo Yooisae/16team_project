@@ -85,7 +85,7 @@ int updata_schedule(Schedule *p){
 }
 
 int delete_schedule(Schedule *p){
-	p->complete==-1;
+	p->complete=-1;
 	printf("==>삭제됨!\n");
 	return 0;
 }
