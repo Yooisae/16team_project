@@ -89,3 +89,19 @@ int delete_schedule(Schedule *p){
 	printf("==>삭제됨!\n");
 	return 0;
 }
+int loadFile(Schedule p[]){
+	int count=0;
+	FILE *fp;
+	fp=fopen("schedule.txt","rt");
+	if(fp==NULL){
+		printf("=>파일 없음\n");
+		return 0;
+	}
+	for(;;count++){
+		fscanf(fp, "%d %d %d %[^\n]s",&p[count].s_date, &p[count].e_date, &p[count].importance,p[count].s_name);
+		if(feof(fp)) break;
+}
+	fclose(fp);
+	printf("=>로딩성공!\n");
+	return count;
+}  
