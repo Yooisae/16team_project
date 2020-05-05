@@ -38,6 +38,19 @@ int main(){
 			}
 			updata_schedule(&sch[no-1]);
 		}
+		else if(menu==4){
+			int no=select_No(sch,curcount);
+			if(no==0){
+				printf("=>취소되었습니다\n");
+				continue;
+			}
+			int deleteok;
+			printf("정말로 삭제하시겠습니까?(삭제:1)");
+			scanf("%d",&deleteok);
+			if(deleteok==1){
+				if(delete_schedule(&sch[no-1])) count--;
+				}
+			}
 		else{
 			printf("=======종료=======\n");
 			break;
