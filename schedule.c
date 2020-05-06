@@ -30,8 +30,9 @@ int add_schedule(Schedule *p){
 
 void read_schedule(Schedule p){
 	char comp[10]="complete";
-	if(p.complete == 0)
+	if(p.complete == 0){
 		strcpy(comp,"ongoing");
+	}
 	printf("%-20s %-4d-%2d-%-7d %-4d-%2d-%-9d %-5d %s\n", p.s_name, p.s_date[0], p.s_date[1], p.s_date[2], p.e_date[0], p.e_date[1], p.e_date[2], p.importance, comp);
 }
 
@@ -152,3 +153,9 @@ void sortedbyDate(Schedule p[],int count);//날짜별로 정렬하는 함수
 
 void sortedbyImportance(Schedule p[],int count);//중요도별로 정렬하는 함수
 
+int complete(Schedule p[]){
+	p->complete=1;
+	printf("일정이 완료되었습니다!\n");
+	printf("\n");
+	return 1;
+}

@@ -10,6 +10,7 @@ int select_menu(){
 	printf("4. 메뉴삭제\n");
 	printf("5. 메뉴저장\n");
 	printf("6. 메뉴검색\n");
+	printf("7. 메뉴 완료 입력\n");
 	printf("메뉴를 입력해 주세요: ");
 	scanf("%d", &menu);
 	printf("\n");
@@ -73,7 +74,18 @@ int main(){
 			else
 				find(sch, curcount);
 		}
-		else{
+		
+		else if(menu==7){
+			int no=select_No(sch,curcount);
+			if(no==0){
+				printf("=>취소되었습니다\n");
+				continue;
+			}
+			
+			complete(&sch[no-1]);				
+			list_schedule(sch, curcount);
+			}
+		else {
 			printf("=======종료=======\n");
 			break;
 		}
