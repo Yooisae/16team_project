@@ -11,12 +11,12 @@ int add_schedule(Schedule *p){
 	printf("일정 이름을 입력해 주세요: ");
 	getchar();
 	scanf(" %[^\n]", p->s_name);
-	printf("일정 시작일을 입력해 주세요: ");
+	printf("일정 시작일을 입력해 주세요(yyyy mm dd): ");
 	for(int i = 0 ; i < 3 ; i++){
 		getchar();
 		scanf("%d", &p->s_date[i]);
 	}
-	printf("일정 종료일을 입력해 주세요: ");
+	printf("일정 종료일을 입력해 주세요(yyyy mm dd):");
 	for(int i = 0 ; i < 3 ; i++){
 		getchar();
 		scanf("%d", &p->e_date[i]);
@@ -71,15 +71,15 @@ int select_No(Schedule *p, int count){
 
 int updata_schedule(Schedule *p){
 	
-	printf("일정 이름을 입력해 주세요: ");
+	printf("일정 이름을 입력해 주세요 : ");
 	getchar();
 	scanf("%[^\n]s", p->s_name);
-	printf("일정 시작일을 입력해 주세요: ");
+	printf("일정 시작일을 입력해 주세요(yyyy mm dd): ");
 	for(int i = 0 ; i < 3 ; i++){
 		getchar();
 		scanf("%d", &p->s_date[i]);
 	}
-	printf("일정 종료일을 입력해 주세요: ");
+	printf("일정 종료일을 입력해 주세요(yyyy mm dd): ");
 	for(int i = 0 ; i < 3 ; i++){
 		getchar();
 		scanf("%d", &p->e_date[i]);
