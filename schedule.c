@@ -88,7 +88,7 @@ int updata_schedule(Schedule *p){
 	getchar();
 	scanf("%d", &p->importance);
 	p->complete = 0;
-	printf("=>수정되었습니다!");
+	printf("=>수정되었습니다!\n");
 	return 1;
 }
 
@@ -126,4 +126,29 @@ int loadFile(Schedule p[]){
 	printf("=>로딩성공!\n");
 	return count;
 } 
+
+void find(Schedule p[],int count){
+	char f_name[20];
+	int confi = 0;
+	printf("\n==>찾을 일정의 이름을 입력해 주세요: ");
+	getchar();
+	scanf("%[^\n]", f_name);
+	printf("\nNO.| 일정이름		시작일		종료일		중요도	완료유무\n");
+	printf("------------------------------------------------------------------------\n");
+	for(int i = 0 ; i < count ; i++){
+		if(strstr(p[i].s_name,f_name)!=NULL && p[i].complete != -1){
+			printf("%2d.| ",(i+1));
+			read_schedule(p[i]);
+			confi++;
+		}
+		
+	}
+	if(confi==0){	
+		printf("==>검색된 일정 없음<==\n");
+	}
+}
+
+void sortedbyDate(Schedule p[],int count);//날짜별로 정렬하는 함수
+
+void sortedbyImportance(Schedule p[],int count);//중요도별로 정렬하는 함수
 
