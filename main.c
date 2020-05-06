@@ -11,6 +11,7 @@ int select_menu(){
 	printf("5. 메뉴저장\n");
 	printf("6. 메뉴검색\n");
 	printf("7. 메뉴 완료 입력\n");
+	printf("8. 일정 진행도\n");
 	printf("메뉴를 입력해 주세요: ");
 	scanf("%d", &menu);
 	printf("\n");
@@ -85,6 +86,16 @@ int main(){
 			complete(&sch[no-1]);				
 			list_schedule(sch, curcount);
 			}
+		else if(menu==8){
+			if(curcount==0){
+				printf("일정이 없습니다!\n");
+				continue;
+			}
+			else{
+				processivity(sch,curcount);
+			}
+			}
+				
 		else {
 			printf("=======종료=======\n");
 			break;
