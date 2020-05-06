@@ -9,8 +9,10 @@ int select_menu(){
 	printf("3. 일정수정\n");
 	printf("4. 메뉴삭제\n");
 	printf("5. 메뉴저장\n");
+	printf("6. 메뉴검색\n");
 	printf("메뉴를 입력해 주세요: ");
 	scanf("%d", &menu);
+	printf("\n");
 	return menu;
 }
 
@@ -62,6 +64,14 @@ int main(){
 			}
 			else
 				saveFile(sch, curcount);
+		}
+		else if(menu == 6){
+			if(count == 0){
+				printf("일정이 없습니다.");
+				continue;
+			}
+			else
+				find(sch, curcount);
 		}
 		else{
 			printf("=======종료=======\n");
