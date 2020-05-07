@@ -12,6 +12,7 @@ int select_menu(){
 	printf("6. 메뉴검색\n");
 	printf("7. 메뉴 완료 입력\n");
 	printf("8. 일정 진행도\n");
+	printf("9. 정렬해서 보기\n");
 	printf("0. 프로그램 종류\n");
 	printf("메뉴를 입력해 주세요: ");
 	scanf("%d", &menu);
@@ -96,7 +97,25 @@ int main(){
 				processivity(sch,curcount);
 			}
 			}
-				
+		else if(menu==9){
+			int no;
+			printf("1. 날짜별로 정렬해서 보기\n");
+			printf("2. 중요도별로 정렬해서 보기\n");
+			printf("\n");
+			printf("원하는 메뉴는?");
+			scanf("%d",&no);
+			printf("\n");
+			if(no==1){
+			
+			}
+			else if(no==2){
+			sortedbyImportance(sch,curcount);
+			}
+			else{
+				printf("감사합니다.\n");
+				continue;
+			}
+		}
 		else {
 			printf("=======종료=======\n");
 			break;

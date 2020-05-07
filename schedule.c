@@ -151,7 +151,20 @@ void find(Schedule p[],int count){
 
 void sortedbyDate(Schedule p[],int count);//날짜별로 정렬하는 함수
 
-void sortedbyImportance(Schedule p[],int count);//중요도별로 정렬하는 함수
+void sortedbyImportance(Schedule p[],int count){
+	Schedule temp[100];
+	for(int i=0; i<count; i++){
+		for(int j=0; j<i; j++){		
+			if(p[j].importance<p[j+1].importance){
+				temp[i]=p[j];
+				p[j]=p[j+1];
+				p[j+1]=temp[i];
+			}
+		}
+	}
+	list_schedule(p,count);
+}
+
 
 int complete(Schedule p[]){
 	p->complete=1;
