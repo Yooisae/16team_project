@@ -107,6 +107,7 @@ int main(){
 			printf("\n");
 			if(no==1){
 			
+				sortedbyDate(sch,curcount);
 			}
 			else if(no==2){
 			sortedbyImportance(sch,curcount);
