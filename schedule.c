@@ -149,7 +149,20 @@ void find(Schedule p[],int count){
 	}
 }
 
-void sortedbyDate(Schedule p[],int count);//날짜별로 정렬하는 함수
+void sortedbyDate(Schedule p[],int count ){
+	Schedule temp;
+	for(int i=0; i<count; i++){
+		for(int j=i+1; j<count; j++){		
+			if(p[i].e_date[0]>=p[j].e_date[0]&&p[i].e_date[1]>=p[j].e_date[1]&&p[i].e_date[2]>p[j].e_date[2]){
+				temp=p[i];
+				p[i]=p[j];
+				p[j]=temp;
+			}
+		}
+	}
+	list_schedule(p,count);
+	
+}
 
 void sortedbyImportance(Schedule p[],int count){
 	Schedule temp[100];
