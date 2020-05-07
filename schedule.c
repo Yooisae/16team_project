@@ -165,13 +165,13 @@ void sortedbyDate(Schedule p[],int count ){
 }
 
 void sortedbyImportance(Schedule p[],int count){
-	Schedule temp[100];
+	Schedule temp;
 	for(int i=0; i<count; i++){
-		for(int j=0; j<i; j++){		
-			if(p[j].importance<p[j+1].importance){
-				temp[i]=p[j];
-				p[j]=p[j+1];
-				p[j+1]=temp[i];
+		for(int j=i+1; j<count; j++){		
+			if(p[i].importance<p[j].importance){
+				temp=p[i];
+				p[i]=p[j];
+				p[j]=temp;
 			}
 		}
 	}
