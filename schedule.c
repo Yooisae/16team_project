@@ -62,12 +62,12 @@ void list_schedule(Schedule p[], int count){
 	printf("\n");
 }
 
-int select_No(Schedule *p, int count){
-    int no;
-    list_schedule(p,count);
+int select_No(Schedule *p, int count){//수정이나 삭제 함수 등에서 원하는 일정을 선택하여 바꾸기 위한 함수
+    int no;//선택할 번호
+    list_schedule(p,count);//일정 리스트 함수를 불러와서 보여주기 위한 코드
     printf("번호는 (취소:0)?");
     scanf("%d",&no);
-    return no;
+    return no;//선택한 번호를 return
 }
 
 int updata_schedule(Schedule *p){
