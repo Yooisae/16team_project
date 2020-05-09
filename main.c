@@ -108,7 +108,8 @@ int main(){
 			if(no==1){
 				if(curcount==0){
 					printf("일정이 없습니다.\n");
-				else{	
+			}	
+			else{	
 				sortedbyDate(sch,curcount);
 				}
 			}
