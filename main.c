@@ -106,12 +106,21 @@ int main(){
 			scanf("%d",&no);
 			printf("\n");
 			if(no==1){
-			
+				if(curcount==0){
+					printf("일정이 없습니다.\n");
+				else{	
 				sortedbyDate(sch,curcount);
+				}
 			}
 			else if(no==2){
-			sortedbyImportance(sch,curcount);
+				if(curcount==0){
+					printf("일정이 없습니다.\n");
+				}
+				else{
+					sortedbyImportance(sch,curcount);
+				}
 			}
+
 			else{
 				printf("감사합니다.\n");
 				continue;
