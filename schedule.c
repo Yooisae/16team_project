@@ -160,6 +160,7 @@ void sortedbyDate(Schedule p[],int count ){
 			}
 		}
 	}
+	printf("날짜에 따라 출력된 일정입니다.\n\n");
 	list_schedule(p,count);
 	
 }
@@ -175,6 +176,8 @@ void sortedbyImportance(Schedule p[],int count){
 			}
 		}
 	}
+	printf("중요도에 따라 출력된 일정입니다.\n\n");
+	printf("\n");
 	list_schedule(p,count);
 }
 
