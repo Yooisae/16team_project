@@ -62,23 +62,23 @@ void list_schedule(Schedule p[], int count){
 	printf("\n");
 }
 
-int select_No(Schedule *p, int count){
-    int no;
-    list_schedule(p,count);
+int select_No(Schedule *p, int count){//수정이나 삭제 함수 등에서 원하는 일정을 선택하여 바꾸기 위한 함수
+    int no;//선택할 번호
+    list_schedule(p,count);//일정 리스트 함수를 불러와서 보여주기 위한 코드
     printf("번호는 (취소:0)?");
     scanf("%d",&no);
-    return no;
+    return no;//선택한 번호를 return
 }
 
-int updata_schedule(Schedule *p){
+int updata_schedule(Schedule *p){//스케줄을 수정하기 위한 함수
 	
 	printf("일정 이름을 입력해 주세요 : ");
 	getchar();
-	scanf("%[^\n]s", p->s_name);
+	scanf("%[^\n]s", p->s_name);//일정 이름 받기
 	printf("일정 시작일을 입력해 주세요(yyyy mm dd): ");
 	for(int i = 0 ; i < 3 ; i++){
 		getchar();
-		scanf("%d", &p->s_date[i]);
+		scanf("%d", &p->s_date[i]);//날짜 년,월,일을 배열을 통해 받기
 	}
 	printf("일정 종료일을 입력해 주세요(yyyy mm dd): ");
 	for(int i = 0 ; i < 3 ; i++){
@@ -87,7 +87,7 @@ int updata_schedule(Schedule *p){
 	}
 	printf("일정의 중요한 정도를 입력해 주세요(1~5): ");
 	getchar();
-	scanf("%d", &p->importance);
+	scanf("%d", &p->importance);//중요도 입력
 	p->complete = 0;
 	printf("=>수정되었습니다!\n");
 	return 1;
@@ -160,6 +160,7 @@ void sortedbyDate(Schedule p[],int count ){
 			}
 		}
 	}
+	printf("날짜에 따라 출력된 일정입니다.\n\n");
 	list_schedule(p,count);
 	
 }
@@ -175,6 +176,8 @@ void sortedbyImportance(Schedule p[],int count){
 			}
 		}
 	}
+	printf("중요도에 따라 출력된 일정입니다.\n\n");
+	printf("\n");
 	list_schedule(p,count);
 }
 
