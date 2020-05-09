@@ -70,15 +70,15 @@ int select_No(Schedule *p, int count){//수정이나 삭제 함수 등에서 원
     return no;//선택한 번호를 return
 }
 
-int updata_schedule(Schedule *p){
+int updata_schedule(Schedule *p){//스케줄을 수정하기 위한 함수
 	
 	printf("일정 이름을 입력해 주세요 : ");
 	getchar();
-	scanf("%[^\n]s", p->s_name);
+	scanf("%[^\n]s", p->s_name);//일정 이름 받기
 	printf("일정 시작일을 입력해 주세요(yyyy mm dd): ");
 	for(int i = 0 ; i < 3 ; i++){
 		getchar();
-		scanf("%d", &p->s_date[i]);
+		scanf("%d", &p->s_date[i]);//날짜 년,월,일을 배열을 통해 받기
 	}
 	printf("일정 종료일을 입력해 주세요(yyyy mm dd): ");
 	for(int i = 0 ; i < 3 ; i++){
@@ -87,7 +87,7 @@ int updata_schedule(Schedule *p){
 	}
 	printf("일정의 중요한 정도를 입력해 주세요(1~5): ");
 	getchar();
-	scanf("%d", &p->importance);
+	scanf("%d", &p->importance);//중요도 입력
 	p->complete = 0;
 	printf("=>수정되었습니다!\n");
 	return 1;
