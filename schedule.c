@@ -67,6 +67,7 @@ int select_No(Schedule *p, int count){//수정이나 삭제 함수 등에서 원
     list_schedule(p,count);//일정 리스트 함수를 불러와서 보여주기 위한 코드
     printf("번호는 (취소:0)?");
     scanf("%d",&no);
+	 printf("\n");
     return no;//선택한 번호를 return
 }
 
@@ -90,6 +91,7 @@ int updata_schedule(Schedule *p){//스케줄을 수정하기 위한 함수
 	scanf("%d", &p->importance);//중요도 입력
 	p->complete = 0;
 	printf("=>수정되었습니다!\n");
+	printf("\n");
 	return 1;
 }
 
@@ -115,7 +117,7 @@ int loadFile(Schedule p[]){
 	FILE *fp;
 	fp=fopen("schedule.txt","rt");
 	if(fp==NULL){
-		printf("=>파일 없음\n");
+		printf("=>파일이 없습니다.\n");
 		return 0;
 	}
 	for(;;count++){
@@ -145,7 +147,7 @@ void find(Schedule p[],int count){
 		
 	}
 	if(confi==0){	
-		printf("==>검색된 일정 없음<==\n");
+		printf("==>검색된 일정 없이 없습니다.<==\n");
 	}
 }
 
