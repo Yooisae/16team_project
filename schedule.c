@@ -16,7 +16,7 @@ int add_schedule(Schedule *p){
 		getchar();
 		scanf("%d", &p->s_date[i]);
 	}
-	printf("일정 종료일을 입력해 주세요(yyyy mm dd):");
+	printf("일정 종료일을 입력해 주세요(yyyy mm dd): ");
 	for(int i = 0 ; i < 3 ; i++){
 		getchar();
 		scanf("%d", &p->e_date[i]);
@@ -37,28 +37,16 @@ void read_schedule(Schedule p){
 }
 
 void list_schedule(Schedule p[], int count){
-	//printf("\n===>해야 하는 일정<===\n");
 	printf("NO.| 일정이름		시작일		종료일		중요도	완료유무\n");
 	printf("------------------------------------------------------------------------\n");
 	for(int i = 0 ; i <count ; i++){
-		if(p[i].complete==-1/*||p[i].complete==1*/)
+		if(p[i].complete==-1)
 			continue;
 		else{
 			printf("%2d.| ",(i+1));
 			read_schedule(p[i]);
 		}
 	}
-	/*printf("\n\n=============================================================================\n\n");
-	printf("===>완료된 일정<===\n");
-	printf("NO.| 일정이름		시작일		종료일		중요도	완료유무\n");
-	printf("------------------------------------------------------------------------\n");
-	for(int i = 0 ; i <count ; i++){
-		printf("%2d.| ",(i+1));
-		if(p[i].complete==-1||p[i].complete==0)
-			continue;
-		else
-			read_schedule(p[i]);
-	}*/
 	printf("\n");
 }
 
@@ -121,7 +109,6 @@ int loadFile(Schedule p[]){
 		return 0;
 	}
 	for(;;count++){
-		//fscanf(fp,"%[^\n] %d %d %d %d",p[count].s_name,&p[count].s_date, &p[count].e_date, &p[count].importance,&p[count].complete);
 		fscanf(fp,"%[^\n] %d %d %d %d %d %d %d %d", p[count].s_name, &p[count].s_date[0], &p[count].s_date[1], &p[count].s_date[2], &p[count].e_date[0], &p[count].e_date[1], &p[count].e_date[2], &p[count].importance, &p[count].complete);
 		if(feof(fp)) break;
 }
