@@ -13,7 +13,7 @@ int select_menu(){
 	printf("7. 메뉴 완료 입력\n");
 	printf("8. 일정 진행도\n");
 	printf("9. 정렬해서 보기\n");
-	printf("0. 프로그램 종류\n");
+	printf("0. 프로그램 종료\n");
 	printf("메뉴를 입력해 주세요: ");
 	scanf("%d", &menu);
 	printf("\n");
