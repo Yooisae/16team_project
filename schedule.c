@@ -189,8 +189,16 @@ int processivity(Schedule p[],int count){
 	proc=((float)p_count/count)*100;	
 	printf("총 %d개의 일정 중에 %d개의 일정을 완료하셨습니다.\n",count,p_count);
 	printf("현재 전체 일정의 진행도는 %0.f%% 입니다\n",proc);
-	for(int i =0 ; i<proc ; i++){
-		
-	}
+	for(int i=0;i<102;i++)
+		printf("-");
+	printf("\n|");
+	for(int i =0 ; i<proc ; i++)
+		printf("@");	
+	for(int i = proc ; i<100;i++)
+		printf(" ");
+	printf("|\n");
+	for(int i=0;i<102;i++)
+		printf("-");
+	
 	return 0;
 }
