@@ -1,12 +1,5 @@
 #include"schedule.h"
 
-/*typedef struct{
-	char s_name[20];//스케줄 이름
-	int s_date;//시작일
-	int e_date;//종료일
-	int importance;//중요도
-	bool complete;//완료유무
-}Schedule;*/
 int add_schedule(Schedule *p){
 	printf("일정 이름을 입력해 주세요: ");
 	getchar();
